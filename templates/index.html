@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Summarizer</title>
+</head>
+<body>
+    <h1>Write your text to be summarized</h1>
+    <form action="/predict" method="post">
+        <textarea name="text" rows="5" cols="40" placeholder="Enter your text here..."></textarea><br>
+        <button type="submit">Summarize</button>
+    </form>
+
+    {% if result %}
+        <h2>Summarized Text:</h2>
+        <p>{{ result }}</p>
+    {% endif %}
+
+    {% if error %}
+        <h2 style="color: red;">Error:</h2>
+        <p>{{ error }}</p>
+    {% endif %}
+</body>
+</html>
